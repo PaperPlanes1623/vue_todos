@@ -1,6 +1,6 @@
 <template>
     <div class="todo-item" v-bind:class="{'is-complete':todo.completed}">
-        <p> <input type="checkbox" v-on:click="markComplete">
+        <p> <input type="checkbox" v-on:click="markComplete" v-bind:class="clicked">
             {{todo.title}}
             <button @click="$emit('del-todo', todo.id)" class="del">x</button>
         </p>
@@ -14,6 +14,11 @@ export default {
     methods: {
         markComplete() {
             this.todo.completed = !this.todo.completed;
+        }, 
+        balledHard() {
+            if(condition) {
+                alert("You are officially a baller!");
+            }
         }
     }
 }
